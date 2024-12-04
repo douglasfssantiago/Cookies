@@ -13,13 +13,30 @@
     --app-dark-gray: #808080;
 }
 
-html {
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border-style: none;
+    font-family:inherit;
     box-sizing: border-box;
-    font-family: 'Nunito Sans', 'Open Sans', Arial, sans-serif ;
+}
+
+html {
+    min-width: 100%;
 } 
 
+body {
+    font-family: 'Nunito Sans', 'Open Sans', Arial, sans-serif;
+    font-weight: 400;
+    text-rendering: geometricPrecision;
+    background-color: var(--app-dark-background);
+    margin-bottom: 25px;
+    margin: 0;
+}
+
 main {
-    background-color: var(--app-dark-background) ;
+    overflow: hidden;
 }
 
 .container {
