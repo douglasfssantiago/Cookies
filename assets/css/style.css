@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+/*--------------------------------------*/
+/*           General rule               */
+/*--------------------------------------*/
+
+:root {
+    --app-dark-background: #1a1d28;
+    --app-lightgray: #c3c3c3;
+    --app-blue: #2e3aec;
+    --app-light-blue: #88aef5;
+    --app-white: #fff;
+    --app-dark-gray: #808080;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', 'Open Sans', Arial, sans-serif ;
+} 
+
+main {
+    background-color: var(--app-dark-background) ;
+}
+
+.container {
+    width: min(100% - 32px, 1080px);
+    margin: auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-between {
+    justify-content: space-between;
+}
+
+.grid-center{
+    display: grid;
+    place-items: center;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+
