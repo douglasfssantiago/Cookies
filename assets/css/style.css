@@ -19,7 +19,7 @@ body {
     text-rendering: geometricPrecision;
     background-color: var(--app-dark-background);
     margin-bottom: 25px;
-    margin: 0;
+    margin: 0 0 25px 0;
 }
 
 main {
@@ -42,7 +42,6 @@ main {
         text-align: center;
         font-size: 30px;
         font-weight: 600;
-        color: var(--app-white);
     }
 }
 
@@ -114,34 +113,27 @@ button {
     color: var(--app-white);
     background-color: var(--app-blue); 
     cursor: pointer; 
+    transition: all 0.25s ease-in-out;
 }
 
 button:hover {
     color: var(--app-white);
-    border: 1px solid var(--app-dark-blue); 
-    background-color: var(--app-dark-blue);
-    transition: all 0.25s ease-in-out;
+    border: 1px solid var(--app-dark-blue);
+    background-color: var(--app-dark-blue);    
 }
 
 .settings-btn{
-    font-size: 18px;
-    font-weight: 600;
-    display: inline-block;
-    padding: 8px 30px;
+    
     border: 1px solid var(--app-blue);
     border-radius: 25px; 
-    text-align: center;
-    text-decoration: none;
     color: var(--app-blue);
     background-color: var(--app-white); 
-    cursor: pointer;
 }
 
 .settings-btn:hover {
     color: var(--app-white);
     border: 1px solid var(--app-dark-blue);
     background-color: var(--app-dark-blue);
-    transition: all 0.25s ease-in-out; 
 }
 
 .buttons {
@@ -170,7 +162,6 @@ button:hover {
     right: 0;
     bottom: 0;
     background-color: var(--app-gray);
-    -webkit-transition: .4s;
     transition: .4s;
 }
   
@@ -182,7 +173,6 @@ button:hover {
     left: 4px;
     bottom: 4px;
     background-color: var(--app-white);
-    -webkit-transition: .4s;
     transition: .4s;
 }
   
@@ -195,8 +185,6 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
     transform: translateX(26px);
 }
   

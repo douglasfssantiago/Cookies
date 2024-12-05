@@ -38,7 +38,10 @@ function hasCookies() {
         console.log('No cookies found.');
         return false;
     }
-    console.log('Cookies found:', cookies.split(';').map(cookie => cookie.trim()));
+    console.table(cookies.split(';').map(cookie => {
+        const [name, value] = cookie.trim().split('=');
+        return { name, value };
+    }));
     return true;
 }
 
@@ -61,11 +64,11 @@ function closeModal() {
 
 function acceptAllCookies() {
     checkSwitches();
-    createCookies();
+    getCookies();
     closeModal();
 }
 
-function createCookies() {
+function getCookies() {
     const cookies = {
         Browser: browserBtn.checked ? (browserData ? browserData.brands[0].brand : "Not identified") : null,
         OperatingSystem: operatingSystemBtn.checked ? operatingSystem : null,
@@ -73,9 +76,14 @@ function createCookies() {
         ScreenHeight: screenHeigthBtn.checked ? screenHeight : null
     };
 
+    const cookieArray = [];
     Object.entries(cookies).forEach(([name, value]) => {
-        if (value) setCookie(name, value);
+        if (value) {
+            setCookie(name, value);
+            cookieArray.push({ name, value });
+        }
     });
+    console.table(cookieArray);
 }
 
 function setCookie(name, value, seconds = 10) {
@@ -89,14 +97,12 @@ function checkSwitches() {
 }
 
 onEvent('click', acceptBtn, acceptAllCookies);
-
 onEvent('click', settingsBtn, () => {
     modalDefault.style.display = 'none';
     modalSettings.style.display = 'block';
 });
-
 onEvent('click', savePreferencesBtn, () => {
-    createCookies();
+    getCookies();
     closeModal();
 });
 
