@@ -28,7 +28,7 @@ const operatingSystem = navigator.userAgentData.platform;
 const screenWidth = window.innerWidth;
 const screenHeight = window.innerHeight;
 
-onEvent('DOMContentLoaded', document, () => {
+onEvent('load', window, () => {
     if (!hasCookies()) openModal();
 });
 
